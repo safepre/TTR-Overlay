@@ -4,6 +4,7 @@ using System;
 using TTROverlay.API;
 using TTROverlay.Forms;
 using static TTROverlay.API.WindowsAPI;
+using System.Security.AccessControl;
 
 namespace TTROverlay
 {
@@ -47,7 +48,7 @@ namespace TTROverlay
                 {
                     overlay.UpdateOverlayText($"District: {e.District} ",
                                               $"Neighborhood: {e.Neighborhood}",
-                                              $"Zone: {e.Zone}");
+                                              $"Location: {e.Zone}");
                 }));
             }
         }
@@ -70,9 +71,6 @@ namespace TTROverlay
                 BackColor = Color.Transparent
             };
             connectButton.Click += ConnectButton_Click;
-
-            connectButton.MouseEnter += (s, e) => connectButton.Image = Properties.Resources.ConnectButtonHover;
-            connectButton.MouseLeave += (s, e) => connectButton.Image = Properties.Resources.ConnectButtonNormal;
 
             connectButton.Location = new Point(
                 (this.ClientSize.Width - connectButton.Width) / 2,
@@ -112,7 +110,7 @@ namespace TTROverlay
                 int overlayWidth = clientWidth / 2;
                 int overlayHeight = 25;
                 int xPosition = (clientWidth - overlayWidth) / 2;
-                int yPosition = 0; // Position at the top of the client area
+                int yPosition = 0;
                 int initialStyle = GetWindowLong(overlay.Handle, -20);
                 SetWindowLong(overlay.Handle, -20, initialStyle | 0x80000 | 0x20);
                 SetWindowPos(overlay.Handle, IntPtr.Zero, xPosition, yPosition, overlayWidth, overlayHeight, SWP_NOZORDER | SWP_NOACTIVATE);
@@ -149,6 +147,8 @@ namespace TTROverlay
                 RepositionOverlay();
             }
         }
+
+
         private async void ConnectButton_Click(object sender, EventArgs e)
         {
             try
