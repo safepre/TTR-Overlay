@@ -5,7 +5,7 @@
 This tool enhances the streaming experience for Toontown Rewritten by providing a simple overlay that updates based on the game server. The overlay appears in the client area of the game window and adjusts dynamically without user intervention. This project is developed using Windows Forms and is currently supported only on Windows.
 ## Installation
 
-1. **Download the Latest Version**: You can download the `.exe` file from the [releases page](#). 
+1. **Download the Latest Version**: You can download the `.exe` file from the [releases page](https://github.com/safepre/TTR-Overlay/releases/tag/v1.0.0). 
 
 2. **Run the Installer**: Follow the on-screen instructions to install the application.
 
