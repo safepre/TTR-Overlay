@@ -1,0 +1,9 @@
+C:\Users\Owner\source\repos\TTROverlay\TTROverlay\bin\Debug\TTROverlay.exe.config
+C:\Users\Owner\source\repos\TTROverlay\TTROverlay\bin\Debug\TTROverlay.exe
+C:\Users\Owner\source\repos\TTROverlay\TTROverlay\bin\Debug\TTROverlay.pdb
+C:\Users\Owner\source\repos\TTROverlay\TTROverlay\obj\Debug\TTROverlay.csproj.AssemblyReference.cache
+C:\Users\Owner\source\repos\TTROverlay\TTROverlay\obj\Debug\TTROverlay.Properties.Resources.resources
+C:\Users\Owner\source\repos\TTROverlay\TTROverlay\obj\Debug\TTROverlay.csproj.GenerateResource.cache
+C:\Users\Owner\source\repos\TTROverlay\TTROverlay\obj\Debug\TTROverlay.csproj.CoreCompileInputs.cache
+C:\Users\Owner\source\repos\TTROverlay\TTROverlay\obj\Debug\TTROverlay.exe
+C:\Users\Owner\source\repos\TTROverlay\TTROverlay\obj\Debug\TTROverlay.pdb
