@@ -7,3 +7,6 @@ C:\Users\Owner\source\repos\TTROverlay\TTROverlay\obj\Debug\TTROverlay.csproj.Ge
 C:\Users\Owner\source\repos\TTROverlay\TTROverlay\obj\Debug\TTROverlay.csproj.CoreCompileInputs.cache
 C:\Users\Owner\source\repos\TTROverlay\TTROverlay\obj\Debug\TTROverlay.exe
 C:\Users\Owner\source\repos\TTROverlay\TTROverlay\obj\Debug\TTROverlay.pdb
+C:\Users\Owner\source\repos\TTROverlay\TTROverlay\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Owner\source\repos\TTROverlay\TTROverlay\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Owner\source\repos\TTROverlay\TTROverlay\obj\Debug\TTROverlay.csproj.Up2Date
