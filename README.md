@@ -11,5 +11,6 @@ This tool enhances the streaming experience for Toontown Rewritten by providing 
 
 3. **Set Up the Overlay**: (FOLLOW THIS STEP) Make sure to use your toon. As soon as your toon is at a playground, go to Options and turn on 'Companion App Support' under 'Gameplay.' Open the application and click the Connect button.
 
-![Setup Screenshot](https://github.com/user-attachments/assets/ceaeac7e-ee1c-4b23-97c5-04cbf8ea4eda) <!-- Replace # with the URL of your screenshot -->
+![2](https://github.com/user-attachments/assets/832a95de-3184-4421-89dc-0cf5441aeca4) <!-- Replace # with the URL of your screenshot -->
 
+![4](https://github.com/user-attachments/assets/f8fcd68a-0f4f-464f-b9bf-3dc6a419d32b)
