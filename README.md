@@ -14,3 +14,25 @@ This tool enhances the streaming experience for Toontown Rewritten by providing 
 ![2](https://github.com/user-attachments/assets/832a95de-3184-4421-89dc-0cf5441aeca4) <!-- Replace # with the URL of your screenshot -->
 
 ![4](https://github.com/user-attachments/assets/f8fcd68a-0f4f-464f-b9bf-3dc6a419d32b)
+
+
+## Setting Up TTROverlay for OBS
+
+To capture the TTROverlay in OBS (Open Broadcaster Software), follow these steps:
+
+1. **Open OBS**: Launch OBS Studio on your computer.
+
+2. **Add a New Source**:
+   - Click the `+` button in the "Sources" box at the bottom of the OBS window.
+   - Select `Window Capture` from the list of source types.
+
+3. **Configure Window Capture**:
+   - Name your source (e.g., "TTROverlay").
+   - Click `OK` to proceed to the next step.
+
+4. **Select the Correct Window**:
+   - In the "Window" dropdown menu, find and select `TTREngine64.exe` (or the window title that corresponds to TTROverlay).
+   - Make sure the "Capture Method" is set to `Windows 10 (1903 and up)` for the overlay to pop up.
+   - Ensure that the "Capture Specific Window" option is selected and the correct window is chosen.
+   - Click `OK` to confirm the settings.
+
