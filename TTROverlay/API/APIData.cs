@@ -10,5 +10,6 @@
         public string District { get; set; }
         public string Cog { get; set; }
         public string Quantity { get; set; }
+        public string headColor { get; set; }
     }
 }

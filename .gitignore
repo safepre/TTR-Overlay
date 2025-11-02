@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/TTROverlay/Program.cs
+/TTROverlay/TTROverlay_TemporaryKey.pfx
+packages/
+/TTROverlay/[Bb]in/
+/TTROverlay/[Oo]bj/
+*.nupkg
+*.snupkg
+*.pfx
+*_temporary.*

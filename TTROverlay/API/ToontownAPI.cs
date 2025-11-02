@@ -45,6 +45,7 @@ namespace TTROverlay.API
                         Zone = json["location"]["zone"].ToString(),
                         Neighborhood = json["location"]["neighborhood"].ToString(),
                         District = json["location"]["district"].ToString(),
+                        headColor = json["toon"]["headColor"].ToString()
                     };
                     DataUpdated?.Invoke(this, latestData);
 

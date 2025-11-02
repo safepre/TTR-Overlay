@@ -46,7 +46,7 @@ namespace TTROverlay
             {
                 Invoke(new Action(() =>
                 {
-                    overlay.UpdateOverlayText($"District: {e.District} ",
+                    overlay.UpdateOverlayText($"District: {e.headColor} ",
                                               $"Neighborhood: {e.Neighborhood}",
                                               $"Location: {e.Zone}");
                 }));
