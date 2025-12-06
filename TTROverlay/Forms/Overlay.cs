@@ -1,74 +1,91 @@
 ﻿using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Drawing.Text;
 using System.Windows.Forms;
+using System.Drawing.Text;
+using System.Runtime.InteropServices;
+using System;
 
 namespace TTROverlay.Forms
 {
     public partial class Overlay : Form
     {
-        
-            private string overlayText = "";
-            private string overlayText1 = "";
-            private string overlayText2 = "";
-
-            Font overlayFont = new Font("Consolas", 13f, FontStyle.Bold);
-
+            private PrivateFontCollection privateFonts = new PrivateFontCollection();
+            private Font customFont;
+            private Point mouseLocation;
+            private string overlayText = "";      
             private StringFormat centerFormat = new StringFormat
-            {
-                Alignment = StringAlignment.Center,
-                LineAlignment = StringAlignment.Center
-            };
+                {
+                    Alignment = StringAlignment.Center,
+                    LineAlignment = StringAlignment.Center
+                };
 
-            public Overlay()
+        public Overlay()
             {
                 InitializeComponent();
                 this.FormBorderStyle = FormBorderStyle.None;
                 this.ShowInTaskbar = false;
-                this.BackColor = Color.Blue;
-                this.TransparencyKey = Color.Blue;
-            }
+                this.BackColor = Color.Black;
+                this.TransparencyKey = Color.Black;
+                LoadCustomFont();
+                customFont = new Font(privateFonts.Families[0], 18f, FontStyle.Bold);
+                this.MouseDown += new MouseEventHandler(mouse_Down);
+                this.MouseMove += new MouseEventHandler(mouse_Move);
+         
+        }
 
-            public void UpdateOverlayText(string text1, string text2, string text3)
+        private void LoadCustomFont()
+        {
+            var fontBytes = Properties.Resources.Minnie;
+            IntPtr fontData = Marshal.AllocCoTaskMem(fontBytes.Length);
+            Marshal.Copy(fontBytes, 0, fontData, fontBytes.Length);
+
+            privateFonts.AddMemoryFont(fontData, fontBytes.Length);
+
+            Marshal.FreeCoTaskMem(fontData);
+        }
+        public void UpdateOverlayText(string text)
             {
-                overlayText = text1;
-                overlayText1 = text2;
-                overlayText2 = text3;
+                overlayText = text;
                 this.Invalidate();
             }
 
-            protected override void OnPaint(PaintEventArgs e)
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+
+            e.Graphics.Clear(Color.Black);
+            e.Graphics.SmoothingMode = SmoothingMode.HighQuality;
+            e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+
+            int sectionWidth = this.Width /3;
+
+            RectangleF centerRect = new RectangleF(sectionWidth, 0, sectionWidth + 350, this.Height);
+
+            using (Brush textBrush = new SolidBrush(Color.White))
             {
-                e.Graphics.Clear(Color.Blue);
-                e.Graphics.SmoothingMode = SmoothingMode.HighQuality;
-                e.Graphics.TextRenderingHint = TextRenderingHint.SingleBitPerPixelGridFit;
-
-                using (SolidBrush backgroundBrush = new SolidBrush(Color.FromArgb(128, 0, 0, 255)))
-                {
-                    e.Graphics.FillRectangle(backgroundBrush, this.ClientRectangle);
-                }
-
-                int sectionWidth = this.Width / 3;
-
-                RectangleF leftRect = new RectangleF(0, 0, sectionWidth, this.Height);
-                RectangleF centerRect = new RectangleF(sectionWidth, 0, sectionWidth, this.Height);
-                RectangleF rightRect = new RectangleF(sectionWidth * 2, 0, sectionWidth, this.Height);
-
-                DrawOutlinedText(e.Graphics, overlayText, overlayFont, leftRect, centerFormat, Color.White, Color.Black, 1.75f);
-                DrawOutlinedText(e.Graphics, overlayText1, overlayFont, centerRect, centerFormat, Color.White, Color.Black, 1.75f);
-                DrawOutlinedText(e.Graphics, overlayText2, overlayFont, rightRect, centerFormat, Color.White, Color.Black, 1.75f);
-            }
-
-            private void DrawOutlinedText(Graphics g, string text, Font font, RectangleF rect, StringFormat format, Color fillColor, Color outlineColor, float outlineWidth)
-            {
-                using (GraphicsPath path = new GraphicsPath())
-                using (Pen outlinePen = new Pen(outlineColor, outlineWidth) { LineJoin = LineJoin.Round })
-                using (SolidBrush fillBrush = new SolidBrush(fillColor))
-                {
-                    path.AddString(text, font.FontFamily, (int)font.Style, font.Size, rect, format);
-                    g.DrawPath(outlinePen, path);
-                    g.FillPath(fillBrush, path);
-                }
+                e.Graphics.DrawString(overlayText, customFont, textBrush, centerRect, centerFormat);
             }
         }
+        private void mouse_Down(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                mouseLocation = e.Location;
+            }
+        }
+
+        private void mouse_Move(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Point newLocation = this.PointToClient(Control.MousePosition);
+                this.Location = new Point(
+                    this.Location.X + (newLocation.X - mouseLocation.X),
+                    /*for some odd reason it shifts down when moving the instance so -20 helps with that*/
+                    (this.Location.Y + (newLocation.Y - mouseLocation.Y)-20)); 
+
+            }
+        }
+    }
 }

@@ -61,62 +61,12 @@ namespace TTROverlay.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static System.Drawing.Bitmap ConnectButtonHover {
+        internal static byte[] Minnie {
             get {
-                object obj = ResourceManager.GetObject("ConnectButtonHover", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ConnectButtonNormal {
-            get {
-                object obj = ResourceManager.GetObject("ConnectButtonNormal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ConnectedButtonNormal {
-            get {
-                object obj = ResourceManager.GetObject("ConnectedButtonNormal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ExitButtonHover {
-            get {
-                object obj = ResourceManager.GetObject("ExitButtonHover", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ExitButtonNormal {
-            get {
-                object obj = ResourceManager.GetObject("ExitButtonNormal", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap LauncherBackground {
-            get {
-                object obj = ResourceManager.GetObject("LauncherBackground", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                object obj = ResourceManager.GetObject("Minnie", resourceCulture);
+                return ((byte[])(obj));
             }
         }
     }
